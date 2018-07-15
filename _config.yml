@@ -40,8 +40,7 @@ footer-link-col: "#404040"
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
 
-#footer-img: "/img/bgimage.png"
-page-img: "/img/navbarimage.png"
+page-img: "/img/page_image.png"
 
 # --- Footer options --- #
 
@@ -57,7 +56,7 @@ author:
 social-network-links:
   rss: true
   email: "mouselinos.spur.kw@gmail.com"
-  linkedin: "https://www.linkedin.com/in/spyridon-mouselinos"
+  linkedin: "spyridon-mouselinos"
 
 # Select which share links to show in posts
 share-links-active:
@@ -65,37 +64,6 @@ share-links-active:
   linkedin: true
 
 # --- Web Statistics Section --- #
-
-# Fill in your Google Analytics gtag.js ID to track your website using gtag
-#gtag: ""
-
-# Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
-
-# Google Tag Manager ID
-#gtm: ""
-
-# Matomo (aka Piwik) Web statistics
-# Uncomment the following section to enable Matomo. The opt-out parameter controls
-# whether or not you want to allow users to opt out of tracking.
-
-#matomo:
-#  site_id: "9"
-#  uri: "demo.wiki.pro"
-#  opt-out: true
-
-# --- Comments --- #
-
-# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-# disqus: ""
-
-# To use Facebook Comments, fill in a Facebook App ID
-# fb_comment_id: ""
-
-# --- Misc --- #
-
-# Facebook App ID
-# fb_app_id: ""
 
 # Excerpt Word Length
 # Truncates the excerpt to the specified number of words on the index page
@@ -108,7 +76,7 @@ title-separator: "-"
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Vancouver"
+timezone: "Europe/Athens"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
