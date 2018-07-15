@@ -27,9 +27,11 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 800;
 }
 a {
-  color: {{ site.link-col }};
+  color: #ededed;
 }
-a:hover,
+a:hover {
+  color: {{ site.hover-col }};
+}
 a:focus {
   color: {{ site.hover-col }};
 }
