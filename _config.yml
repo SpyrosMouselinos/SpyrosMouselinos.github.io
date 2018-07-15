@@ -7,16 +7,13 @@
 url: "http://SpyrosMouselinos.github.io"
 baseurl: ""
 
-# --- Navigation bar options --- #
-
-navbar:
-  title: '<div><img src="/img/navbarimage.png"></img>Adventures of a Programmer</div>'
-navbar-links:
-  About Me: "aboutme"
- 
+title: Adventures of a Programmer
 # Short description of your site
 description: An online diary of my work!
 
+# --- Navigation bar options --- #
+navbar-links:
+  About Me: "aboutme"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -30,9 +27,9 @@ avatar: "/img/avatar-icon.png"
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-#navbar-col: "#F5F5F5"
-#navbar-text-col: "#404040"
-#navbar-children-col: "#F5F5F5"
+navbar-col: "#F5F5F5"
+navbar-text-col: "#404040"
+navbar-children-col: "#F5F5F5"
 #page-col: "#FFFFFF"
 link-col: "#008AFF"
 hover-col: "#0085A1"
@@ -44,7 +41,7 @@ footer-link-col: "#404040"
 # instead of colour
 
 #footer-img: "/img/bgimage.png"
-page-img: "/img/bgimage.png"
+page-img: "/img/navbarimage.png"
 
 # --- Footer options --- #
 
