@@ -297,8 +297,8 @@ footer .copyright {
   margin-bottom: 0;
 }
 footer .theme-by {
-  text-align: center;
-  margin: 10px 0 0;
+  font-size : 0;
+  color : transparent;
 }
 
 @media only screen and (min-width: 768px) {
