@@ -2,7 +2,7 @@
 layout: post
 title: Automobile DNN
 subtitle: A modular DNN regressor on Automobile Dataset
-gh-repo: daattali/beautiful-jekyll
+gh-repo: SpyrosMouselinos/PythonProjects/tree/master/AutoMobileDNN
 gh-badge: [star, fork, follow]
 tags: [DNN]
 ---
