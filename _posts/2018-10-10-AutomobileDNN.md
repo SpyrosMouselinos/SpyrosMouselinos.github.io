@@ -14,10 +14,8 @@ with the respective title.
 This is to integrate to the final Library that i plan to make as a wrapper to Tensorflow.
 
 This example has
-##imports85.py
-As the data handler
-##AutomobileDNN.py
-As the model handler
+* imports85.py as the data handler
+* AutomobileDNN.py as the model handler
 
 
 
