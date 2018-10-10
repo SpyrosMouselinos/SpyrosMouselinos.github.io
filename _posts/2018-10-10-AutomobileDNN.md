@@ -15,7 +15,7 @@ This is to integrate to the final Library that i plan to make as a wrapper to Te
 
 This example has
 * imports85.py as the data handler
-* AutomobileDNN.py as the model handler
+* DNNRegressor.py as the model handler
 
 
 
