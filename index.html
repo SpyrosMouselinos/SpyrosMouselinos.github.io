@@ -1,71 +1,743 @@
----
-layout: page
-title: Welcome to my Page!
-use-site-title: true
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Spyros is a Machine Learning Engineer.">
+    <meta name="author" content="SM">
 
-<div class="posts-list">
-  {% for post in paginator.posts %}
-  <article class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-	  <h2 class="post-title">{{ post.title }}</h2>
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
 
-	  {% if post.subtitle %}
-	  <h3 class="post-subtitle">
-	    {{ post.subtitle }}
-	  </h3>
-	  {% endif %}
-    </a>
-
-    <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-
-    <div class="post-entry-container">
-      {% if post.image %}
-      <div class="post-image">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <img src="{{ post.image }}">
-        </a>
-      </div>
-      {% endif %}
-      <div class="post-entry">
-        {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
-        {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
-        {% endif %}
-      </div>
+    <!-- Website Title -->
+    <title>Spyros Mouselinos - Machine Learning Engineer</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
     </div>
+    <!-- end of preloader -->
+    
 
-    {% if post.tags.size > 0 %}
-    <div class="blog-tags">
-      Tags:
-      {% if site.link-tags %}
-      {% for tag in post.tags %}
-      <a href="{{ site.baseurl }}/tags#{{- tag -}}">{{- tag -}}</a>
-      {% endfor %}
-      {% else %}
-        {{ post.tags | join: ", " }}
-      {% endif %}
-    </div>
-    {% endif %}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
 
-   </article>
-  {% endfor %}
-</div>
+        <!-- Image Logo -->
+        <!-- a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> -->
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
 
-{% if paginator.total_pages > 1 %}
-<ul class="pager main-pager">
-  {% if paginator.previous_page %}
-  <li class="previous">
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-  </li>
-  {% endif %}
-  {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-  </li>
-  {% endif %}
-</ul>
-{% endif %}
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#projects">PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                </li>
+            </ul>
+            <span class="nav-item social-icons">
+                <span class="fa-stack">
+                    <a href="https://www.linkedin.com/in/spyridon-mouselinos/">
+                        <span class="hexagon"></span>
+                        <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="https://twitter.com/SpyrosMuselinos">
+                        <span class="hexagon"></span>
+                        <i class="fab fa-twitter fa-stack-1x"></i>
+                    </a>
+                </span>
+            </span>
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navbar -->
+
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-container">
+                            <h1> I am Mouselinos Spyridon and</h1>
+                            <h2> can provide solutions with... <span id="js-rotating">Machine Learning, Data Analysis, Computer Vision, Natural Language Processing</span></h2>
+                            <a class="btn-solid-lg page-scroll" href="#intro">More about me?</a>
+                        </div>
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of header-content -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- Intro -->
+    <div id="intro" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="text-container">
+                        <div class="section-title">EDUCATION</div>
+                        <p>I have studied Electrical and Computer Engineering at National Technical University of Athens, and finished with a 8/10 GPA.
+                         Furthermore, at NTUA i have also obtained a Master of Engineering(M.Eng), with a thesis on Hardware Acceleration of Convolutional Neural Networks, published
+                         at IEEE MOCAST 2019 Proceedings. I have also obtained a Master of Sciences(MSc) at Athens University of Economics and Business (AUEB), at Data Science and Machine 
+                         Learning. During that period i published a follow-up paper published at MDPI Journal named:
+                         </p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-7">
+                    <div class="image-container">
+                        <img class="img-fluid" src="images/intro-office.jpg" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of intro -->
+
+
+    <!-- Description -->
+    <div class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Card -->
+                    <div class="card">
+                        <span class="fa-stack">
+                            <span class="hexagon"></span>
+                            <i class="fas fa-school fa-stack-1x"></i>
+                        </span>
+                        <div class="card-body">
+                            <h4 class="card-title">Bachelor Degree</h4>
+                            <p> Electrical and Computer Engineering (NTUA) 2013-2017</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <span class="fa-stack">
+                            <span class="hexagon"></span>
+                            <i class="fas fa-crown fa-stack-1x"></i>
+                        </span>
+                        <div class="card-body">
+                            <h4 class="card-title">Master of Engineering</h4>
+                            <p>Hardware Acceleration of Neural Networks (NTUA) 2018</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <span class="fa-stack">
+                            <span class="hexagon"></span>
+                            <i class="fas fa-crown fa-stack-1x"></i>
+                        </span>
+                        <div class="card-body">
+                            <h4 class="card-title">Master of Science</h4>
+                            <p>Data Science and Machine Learning (AUEB) (2020-2021)</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of description -->
+
+
+    <!-- Details 1 -->
+	<div id="details" class="accordion">
+		<div class="area-1">
+		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2">
+            
+            <!-- Accordion -->
+            <div class="accordion-container" id="accordionOne">
+                <h2>Skills and Technical Overview</h2>
+                <div class="item">
+                    <div id="headingOne">
+                        <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
+                            <span class="circle-numbering">ML</span><span class="accordion-title">Machine Learning / Deep Learning Skills</span>
+                        </span>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
+                        <div class="accordion-body">
+                            <p/>Tensorflow/Keras (Developed since version 0.9)
+                            <p/>Pytorch
+                            <p/>Caffee / Ludwig
+                            <p/>Sci-Kit Learn / SciPy
+                            <p/>Nltk / Weka / Gensim
+                        </div>
+                    </div>
+                </div> <!-- end of item -->
+            
+                <div class="item">
+                    <div id="headingTwo">
+                        <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
+                            <span class="circle-numbering">DS</span><span class="accordion-title">Data Science / Analytics Skills</span>
+                        </span>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
+                        <div class="accordion-body">
+                            <p/>Pandas / RAPIDS
+                            <p/>Matplotlib / Seaborn / Bokeh 
+                            <p/>SqLite / PostgreSQL / MongoDB / MonetDB
+                            <p/> Tableu / PowerBI / Dashly
+                        </div>
+                    </div>
+                </div> <!-- end of item -->
+            
+                <div class="item">
+                    <div id="headingThree">
+                        <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
+                            <span class="circle-numbering">S/w</span><span class="accordion-title">Software Engineer Skills</span>
+                        </span>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionOne">
+                        <div class="accordion-body">
+                            <p/> Scripting: Python, Matlab
+                            <p/> OOP: C# / Java
+                            <p/> System: C/C++, Bash
+                            <p/> Frameworks: Django, React
+                        </div>
+                    </div>
+                </div> <!-- end of item -->
+
+
+                <div class="item">
+                    <div id="headingFour">
+                        <span class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" role="button">
+                            <span class="circle-numbering">Sys</span><span class="accordion-title">System Designer / DevOps Skills</span>
+                        </span>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionOne">
+                        <div class="accordion-body">
+                            <p/> Knowledge of RestFul Architecture / API-Based Protocols.
+                            <p/> Knowledge of Apache / Nginx Development Servers.
+                            <p/> Docker, Docker Swarm , Kubernetes and VM management.
+                            <p/> AWS Cloud and Google Cloud Practitioner.
+                        </div>
+                    </div>
+                </div> <!-- end of item -->
+            </div> <!-- end of accordion-container -->
+            <!-- end of accordion -->
+
+		</div> <!-- end of area-2 -->
+    </div> <!-- end of accordion -->
+    <!-- end of details 1 -->
+
+
+    <!-- Details 2 -->
+	<div class="tabs">
+        <div class="area-1">
+            <div class="tabs-container">
+                
+                <!-- Tabs Links -->
+                <ul class="nav nav-tabs" id="ariaTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-th"></i> Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-th"></i> Expertise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i class="fas fa-th"></i> Quality</a>
+                    </li>
+                </ul>
+                <!-- end of tabs links -->
+                
+                <!-- Tabs Content -->
+                <div class="tab-content" id="ariaTabsContent">
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                        <h4>Business Services For Companies</h4>
+                        <p>Aria provides the most innovative and customized business services in the industry. Our <a class="green page-scroll" href="#services">Services</a> section shows how flexible we are for all types of budgets.</p>
+                        
+                        <!-- Progress Bars -->
+                        <div class="progress-container">
+                            <div class="title">Business Development 100%</div>
+                            <div class="progress">
+                                <div class="progress-bar first" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="title">Opportunity Spotting 76%</div>
+                            <div class="progress">
+                                <div class="progress-bar second" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="title">Online Marketing 90%</div>
+                            <div class="progress">
+                                <div class="progress-bar third" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div> <!-- end of progress-container -->
+                        <!-- end of progress bars -->
+                        
+                    </div> <!-- end of tab-pane --> 
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                        <ul class="list-unstyled li-space-lg first">
+                            <li class="media">
+                                <div class="media-bullet">1</div>
+                                <div class="media-body"><strong>High quality</strong> is on top of our list when it comes to the way we deliver the services</div>
+                            </li>
+                            <li class="media">
+                                <div class="media-bullet">2</div>
+                                <div class="media-body"><strong>Maximum impact</strong> is what we look for in our actions</div>
+                            </li>
+                            <li class="media">
+                                <div class="media-bullet">3</div>
+                                <div class="media-body"><strong>Quality standards</strong> are important but meant to be exceeded</div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled li-space-lg last">
+                            <li class="media">
+                                <div class="media-bullet">4</div>
+                                <div class="media-body"><strong>We're always looking</strong> for industry leaders to help them win their market position</div>
+                            </li>
+                            <li class="media">
+                                <div class="media-bullet">5</div>
+                                <div class="media-body"><strong>Evaluation</strong> is a key aspect of this business and important</div>
+                            </li>
+                            <li class="media">
+                                <div class="media-bullet">6</div>
+                                <div class="media-body"><strong>Ethic</strong> procedures ar alwasy at the base of everything we do</div>
+                            </li>
+                        </ul>
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                        <p><strong>We strive to achieve</strong> 100% customer satisfaction for both types of customers: hiring companies and job seekers. Types of customers: <a class="green" href="#your-link">with huge potential</a></p>
+                        <p><strong>Our goal is to help</strong> your company achieve its full potential and establish long term stability for <a class="green" href="#your-link">the stakeholders</a></p>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">It's easy to get a quotation, just call our office anytime</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">We'll get back to you with an initial estimate soon</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Get ready to see results even after only 30 days</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Ask for a quote and start improving your business</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Just fill out the form and we'll call you right away</div>
+                            </li>
+                        </ul>
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                </div> <!-- end of tab-content -->
+                <!-- end of tabs content -->
+
+            </div> <!-- end of tabs-container -->
+        </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --> <!-- end of area-2 -->
+    </div> <!-- end of tabs -->
+    <!-- end of details 2 -->
+
+
+
+
+    <!-- Projects -->
+	<div id="projects" class="filter">
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">PROJECTS</div>
+                    <h2>Projects That We're Proud Of</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Filter -->
+                    <div class="button-group filters-button-group">
+                        <a class="button is-checked" data-filter="*"><span>SHOW ALL</span></a>
+                        <a class="button" data-filter=".design"><span>DESIGN</span></a>
+                        <a class="button" data-filter=".development"><span>DEVELOPMENT</span></a>
+                        <a class="button" data-filter=".marketing"><span>MARKETING</span></a>
+                        <a class="button" data-filter=".seo"><span>SEO</span></a>
+                    </div> <!-- end of button group -->
+                    <div class="grid">
+                        <div class="element-item development">
+                            <a class="popup-with-move-anim" href="#project-1"><div class="element-item-overlay"><span>Online Banking</span></div><img src="images/project-1.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item development">
+                            <a class="popup-with-move-anim" href="#project-2"><div class="element-item-overlay"><span>Classic Industry</span></div><img src="images/project-2.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item design development marketing">
+                            <a class="popup-with-move-anim" href="#project-3"><div class="element-item-overlay"><span>BoomBap Audio</span></div><img src="images/project-3.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item design development marketing">
+                            <a class="popup-with-move-anim" href="#project-4"><div class="element-item-overlay"><span>Van Moose</span></div><img src="images/project-4.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item design development marketing seo">
+                            <a class="popup-with-move-anim" href="#project-5"><div class="element-item-overlay"><span>Joy Moments</span></div><img src="images/project-5.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item design marketing seo">
+                            <a class="popup-with-move-anim" href="#project-6"><div class="element-item-overlay"><span>Spark Events</span></div><img src="images/project-6.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item design marketing">
+                            <a class="popup-with-move-anim" href="#project-7"><div class="element-item-overlay"><span>Casual Wear</span></div><img src="images/project-7.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item design marketing">
+                            <a class="popup-with-move-anim" href="#project-8"><div class="element-item-overlay"><span>Zazoo Apps</span></div><img src="images/project-8.jpg" alt="alternative"></a>
+                        </div>
+                    </div> <!-- end of grid -->
+                    <!-- end of filter -->
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+		</div> <!-- end of container -->
+    </div> <!-- end of filter -->
+    <!-- end of projects -->
+
+
+    <!-- Project Lightboxes -->
+    <!-- Lightbox -->
+    <div id="project-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/project-1.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Online Banking</h3>
+                <hr class="line-heading">
+                <h6>Strategy Development</h6>
+                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
+                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <div class="testimonial-container">
+                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                    <p class="testimonial-author">General Manager</p>
+                </div>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/project-2.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Classic Industry</h3>
+                <hr class="line-heading">
+                <h6>Strategy Development</h6>
+                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
+                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <div class="testimonial-container">
+                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                    <p class="testimonial-author">General Manager</p>
+                </div>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/project-3.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>BoomBap Audio</h3>
+                <hr class="line-heading">
+                <h6>Strategy Development</h6>
+                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
+                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <div class="testimonial-container">
+                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                    <p class="testimonial-author">General Manager</p>
+                </div>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-4" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/project-4.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Van Moose</h3>
+                <hr class="line-heading">
+                <h6>Strategy Development</h6>
+                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
+                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <div class="testimonial-container">
+                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                    <p class="testimonial-author">General Manager</p>
+                </div>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-5" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/project-5.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Joy Moments</h3>
+                <hr class="line-heading">
+                <h6>Strategy Development</h6>
+                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
+                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <div class="testimonial-container">
+                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                    <p class="testimonial-author">General Manager</p>
+                </div>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-6" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/project-6.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Spark Events</h3>
+                <hr class="line-heading">
+                <h6>Strategy Development</h6>
+                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
+                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <div class="testimonial-container">
+                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                    <p class="testimonial-author">General Manager</p>
+                </div>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-7" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/project-7.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Casual Wear</h3>
+                <hr class="line-heading">
+                <h6>Strategy Development</h6>
+                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
+                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <div class="testimonial-container">
+                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                    <p class="testimonial-author">General Manager</p>
+                </div>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-8" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/project-8.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Zazoo Apps</h3>
+                <hr class="line-heading">
+                <h6>Strategy Development</h6>
+                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
+                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <div class="testimonial-container">
+                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
+                    <p class="testimonial-author">General Manager</p>
+                </div>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+    <!-- end of project lightboxes -->
+
+
+
+
+
+    <!-- Contact -->
+    <div id="contact" class="form-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="section-title">CONTACT</div>
+                        <h2>Get In Touch Using The Form</h2>
+                        <p>You can stop by our office for a cup of coffee and just use the contact form below for any questions and inquiries</p>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="address"><i class="fas fa-map-marker-alt"></i>22nd Innovative Street, San Francisco, CA 94043, US</li>
+                            <li><i class="fas fa-phone"></i><a href="tel:003024630820">+81 720 22 126</a></li>
+                            <li><i class="fas fa-phone"></i><a href="tel:003024630820">+81 720 22 128</a></li>
+                            <li><i class="fas fa-envelope"></i><a href="mailto:office@aria.com">office@aria.com</a></li>
+                        </ul>
+                        <h3>Follow Aria On Social Media</h3>
+
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-pinterest fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-behance fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    
+                    <!-- Contact Form -->
+                    <form id="contactForm" data-toggle="validator" data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cname" required>
+                            <label class="label-control" for="cname">Name</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Your message</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I agree with Aria's stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a> 
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-2 -->
+    <!-- end of contact -->
+
+
+    
+    	
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
