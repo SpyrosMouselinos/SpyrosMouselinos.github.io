@@ -983,11 +983,9 @@ input[type='checkbox'] {
 }
 
 .accordion .accordion-container {
-	max-width: 90%;
-	margin-right: auto;
-	margin-left: auto;
-	padding-top: 6.375rem;
-	padding-bottom: 1.5rem;
+	margin-left: 40%;
+	padding-top: 5.5rem;
+	padding-bottom: 1rem;
 }
 
 .accordion h2 {
@@ -1938,7 +1936,7 @@ a:hover.back-to-top {
 
 	/* Details 1 */
 	.accordion .accordion-container {
-		max-width: 70%;
+		align-items: center;
 	}
 	/* end of details 1 */
 
@@ -2143,9 +2141,7 @@ a:hover.back-to-top {
 	
 	
 	.accordion .accordion-container {
-		max-width: 88%;
-		margin-left: 2rem;
-		padding-bottom: 0;
+		align-items: center;
 	}
 
 	.accordion .accordion-title {
@@ -2319,8 +2315,7 @@ a:hover.back-to-top {
 
 	/* Details 1 */
 	.accordion .accordion-container {
-		max-width: 28rem;
-		margin-left: 47rem;
+		align-items: center;
 	}
 	/* end of details 1 */
 
