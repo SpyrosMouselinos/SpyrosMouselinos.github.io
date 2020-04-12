@@ -1981,12 +1981,12 @@ a:hover.back-to-top {
 	}
 	
 	.filter .element-item .element-item-overlay { 
-		opacity: 0;
+		opacity: 0.6;
 		transition: opacity 0.3s ease;
 	}
 
 	.filter .element-item:hover .element-item-overlay {
-		opacity: 1;
+		opacity: 0.9;
 	}
 	/* end of projects */
 
