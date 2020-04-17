@@ -983,7 +983,7 @@ input[type='checkbox'] {
 }
 
 .accordion .accordion-container {
-	margin-left: 40%;
+	margin-left: 35%;
 	padding-top: 5.5rem;
 	padding-bottom: 1rem;
 }
@@ -1995,9 +1995,6 @@ a:hover.back-to-top {
 		text-align: left;
 	}
 
-	.counter #counter .cell {
-	}
-	/* end of about */
 
 
 	/* Contact */
@@ -2129,7 +2126,7 @@ a:hover.back-to-top {
 	/* Details 1 */
 	.accordion {
 		padding-top: 0.1;
-		height: 34.625rem;
+		height: 50rem;
 	}
 	
 	.accordion .area-1 {
