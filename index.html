@@ -301,6 +301,12 @@
                         <div class="element-item cv">
                             <a class="popup-with-move-anim" href="#project-2"><div class="element-item-overlay"><span>Quantized-Light CNNs</span></div><img src="images/cv2.jpg" alt="alternative"></a>
                         </div>
+                        <div class="element-item cv">
+                            <a class="popup-with-move-anim" href="#project-9"><div class="element-item-overlay"><span>Object Detection / Object Tracing</span></div><img src="images/cv3.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item cv">
+                            <a class="popup-with-move-anim" href="#project-10"><div class="element-item-overlay"><span>General Purpose and Medical Image Segmentation</span></div><img src="images/cv4.jpg" alt="alternative"></a>
+                        </div>
                         <div class="element-item nlp">
                             <a class="popup-with-move-anim" href="#project-3"><div class="element-item-overlay"><span>Bert-Based Reddit Personality Mimicking</span></div><img src="images/nlp1.jpg" alt="alternative"></a>
                         </div>
@@ -338,16 +344,11 @@
                 <img class="img-fluid" src="images/cv1.jpg" alt="alternative">
             </div> <!-- end of col -->
             <div class="col-lg-4">
-                <h3>Online Banking</h3>
-                <hr class="line-heading">
-                <h6>Strategy Development</h6>
-                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
-                <div class="testimonial-container">
-                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p class="testimonial-author">General Manager</p>
-                </div>
-                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+                <h3>Video Motion Next Frame Prediction</h3>
+                <p class="p-project">In this project i experimented with the different methods of predicting "the next frame" from a video sequence in various datasets.
+                For demonstration purposes an end-to-end notebook in a GPU environment is available here for you to use the model and run it yourself.
+                The same network can be applied to hand movement, people dancing and other various datasets :)</p>
+                <a class="btn-solid-reg" href="https://colab.research.google.com/drive/1cpI-sergoSiqvurk3yMe41H-pqMnwvPh">Mini Demo</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->
@@ -361,20 +362,61 @@
                 <img class="img-fluid" src="images/cv2.jpg" alt="alternative">
             </div> <!-- end of col -->
             <div class="col-lg-4">
-                <h3>Classic Industry</h3>
-                <hr class="line-heading">
-                <h6>Strategy Development</h6>
-                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
-                <div class="testimonial-container">
-                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p class="testimonial-author">General Manager</p>
-                </div>
-                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+                <h3>Quantized-Light CNNs</h3>
+                <p class="p-project">This was my Master of Engineering Thesis, as well as the inspiration for my 2 publications. In this project
+                i tried to explore the ways and the optimizations from quantization to hardware level tweaking, in Convolutional Neural Networks, so they can
+                be easily deployed on IOT/Mobile/Edge Computing Devices.
+                Quantization and Pruning led to implementations of 16/8/4 floating point representations, with little to no accuracy loss
+                in datasets like MNIST/CIFAR10/IMAGENET.
+                Below you can find the link for my Vivado(VHDL based RTL implementation) repo of the first paper.</p>
+                <a class="btn-solid-reg" href="https://github.com/SpyrosMouselinos/MasterThesis/tree/master/final_project">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->
     <!-- end of lightbox -->
+
+
+    <!-- Lightbox -->
+    <div id="project-9" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/cv3.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Object Detection / Object Tracing</h3>
+                <p class="p-project">In this project i developed from scratch the famous Single Shot Detector(SSD) in PyTorch.
+                I trained the network on the COCO dataset and effectively tracked multiple objects at once (people,animals,objects).
+                Also i measured the mAP of my project and found it to be an almost perfect copy of the original paper.
+                I will try to enclose and serve it with Docker or KubeFlow and run it in this page asap!!!.</p>
+                <a class="btn-solid-reg" href="#waitforit">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+
+    <!-- Lightbox -->
+    <div id="project-10" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/cv4.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>General Purpose and Medical Image Segmentation</h3>
+                <p class="p-project">In this project i modified one of my favourite papers (U-Net) and used it in various
+                settings in order to correctly segment objects out of images. Up to now i have created a model capable of segmenting animals and people
+                and as a freelance project to a medical company i (still) try to segment diseased blood cells from a specific image blood test.</p>
+                <a class="btn-solid-reg" href="#waitforit">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+
+
+
 
     <!-- Lightbox -->
     <div id="project-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
@@ -385,14 +427,8 @@
             </div> <!-- end of col -->
             <div class="col-lg-4">
                 <h3>BoomBap Audio</h3>
-                <hr class="line-heading">
-                <h6>Strategy Development</h6>
                 <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
                 <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
-                <div class="testimonial-container">
-                    <p class="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p class="testimonial-author">General Manager</p>
-                </div>
                 <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -514,6 +550,8 @@
     </div> <!-- end of lightbox-basic -->
     <!-- end of lightbox -->
     <!-- end of project lightboxes -->
+
+
 
 
 
